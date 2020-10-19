@@ -1,0 +1,102 @@
+html{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background-color:#000;
+}
+
+.container{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row-reverse;
+    flex-wrap:wrap;
+}
+
+.robo-container,
+.button-container{
+    width:50%;
+    height:100%;
+}
+
+.button-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.start-joke{
+    background:url('./images/robo.gif');
+}
+
+.stop-joke{
+    background:url('./images/joke-teller-robo1.jpg');
+}
+
+.start-joke,
+.stop-joke{
+    background-size:contain;
+    background-position:right center;
+    background-repeat:no-repeat;
+}
+
+button{
+    cursor:pointer;
+    outline:none;
+    width:200px;
+    height:50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:20px;
+    font-weight:900;
+    background-color:#a6f6f1;
+    border:0;
+    border-radius:5px;
+    box-shadow:2px 2px 20px 10px rgba(232, 255, 255,0.3);
+    /* transition: all 1s; */
+}
+
+button:hover{
+    filter:brightness(90%);
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+button:disabled{
+    filter:brightness(30%);
+}
+
+
+/* Media Query: For Mobile */
+
+@media screen and (max-width: 640px){
+    .container{
+        width:100vw;
+    }
+
+    .robo-container,
+    .button-container{
+        width:100%;
+    }
+
+    .robo-container{
+        height:60%;
+    }
+
+    .button-container{
+        height:40%;
+    }
+
+    .start-joke,
+    .stop-joke{
+        background-size:cover;
+        background-position:top top;
+    }
+}
