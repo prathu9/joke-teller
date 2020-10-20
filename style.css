@@ -36,7 +36,7 @@ body{
 }
 
 .stop-joke{
-    background:url('./images/joke-teller-robo1.jpg');
+    background:url('./images/joke-teller-robo.jpg');
 }
 
 .start-joke,
@@ -76,7 +76,7 @@ button:disabled{
 
 /* Media Query: For Mobile */
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 645px){
     .container{
         width:100vw;
     }
@@ -96,7 +96,7 @@ button:disabled{
 
     .start-joke,
     .stop-joke{
-        background-size:cover;
+        background-size:contain;
         background-position:top top;
     }
 }
