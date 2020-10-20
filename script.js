@@ -8,7 +8,7 @@ const tellJoke = (joke, jokeTime)=>{
     try{
         speech.text = joke;
         speachSynthesisObj.speak(speech);
-        setTimeout(()=>{roboContainer.setAttribute("class", "robo-container start-joke");},0);
+        setTimeout(()=>{roboContainer.setAttribute("class", "robo-container start-joke");},1000);
         setTimeout(()=>{roboContainer.setAttribute("class", "robo-container stop-joke");
                         button.disabled = false;
                         },jokeTime)
