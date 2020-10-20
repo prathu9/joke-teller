@@ -1,12 +1,13 @@
 const button = document.getElementById("button");
 const roboContainer = document.querySelector(".robo-container");
+const speachSynthesisObj = speechSynthesis;
 let speech = new SpeechSynthesisUtterance();
 
 //Convert joke in text form into speech using web speech API
 const tellJoke = (joke, jokeTime)=>{
     try{
         speech.text = joke;
-        window.speechSynthesis.speak(speech);
+        speachSynthesisObj.speak(speech);
         setTimeout(()=>{roboContainer.setAttribute("class", "robo-container start-joke");},0);
         setTimeout(()=>{roboContainer.setAttribute("class", "robo-container stop-joke");
                         button.disabled = false;
