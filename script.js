@@ -6,9 +6,7 @@ const tellJoke = (joke, jokeTime)=>{
     try{
         speech.text = joke;
         window.speechSynthesis.speak(speech);
-        if(joke){
-            roboContainer.setAttribute("class", "robo-container start-joke");
-        }
+        setTimeout(()=>{roboContainer.setAttribute("class", "robo-container start-joke");},0);
         setTimeout(()=>{roboContainer.setAttribute("class", "robo-container stop-joke");
                         button.disabled = false;
                         },jokeTime)
