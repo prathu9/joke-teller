@@ -2,6 +2,7 @@ const button = document.getElementById("button");
 const roboContainer = document.querySelector(".robo-container");
 let speech = new SpeechSynthesisUtterance();
 
+//Convert joke in text form into speech using web speech API
 const tellJoke = (joke, jokeTime)=>{
     try{
         speech.text = joke;
