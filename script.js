@@ -4,14 +4,17 @@ const speachSynthesisObj = speechSynthesis;
 let speech = new SpeechSynthesisUtterance();
 
 //Convert joke in text form into speech using web speech API
-const tellJoke = (joke, jokeTime)=>{
+const tellJoke = (joke)=>{
     try{
         speech.text = joke;
         speachSynthesisObj.speak(speech);
-        setTimeout(()=>{roboContainer.setAttribute("class", "robo-container start-joke");},0);
-        setTimeout(()=>{roboContainer.setAttribute("class", "robo-container stop-joke");
-                        button.disabled = false;
-                        },jokeTime)
+        speech.onstart = ()=>{
+            roboContainer.setAttribute("class", "robo-container start-joke");
+        };
+        speech.onend = ()=>{
+            roboContainer.setAttribute("class", "robo-container stop-joke");
+                         button.disabled = false;
+        };
     }
     catch(error){
         console.error(`Error in tellJoke: ${error}`);
@@ -31,9 +34,9 @@ const getJokes = async ()=>{
         }else{
             joke = data.joke;
         }
-        tellJoke(joke, Math.floor(joke.length/15)*1000);
+        tellJoke(joke);
     }catch(error){
-        tellJoke("Sorry I have no jokes, try again",2000);
+        tellJoke("Sorry I have no jokes, try again");
     }
     
 }
